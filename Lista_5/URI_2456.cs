@@ -9,11 +9,11 @@ using System;
       int e = int.Parse(entrada[4]);
 
   
-      if (a < b & b < c & c < d & d < e) { 
+      if (a < b && b < c && c < d && d < e) { 
           Console.WriteLine("C");
         }
         else {
-            if (a > b & b > c & c > d & d > e) {
+            if (a > b && b > c && c > d && d > e) {
               Console.WriteLine("D");
             }
             else {

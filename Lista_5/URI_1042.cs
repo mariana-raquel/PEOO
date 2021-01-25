@@ -19,6 +19,5 @@ using System;
       Console.WriteLine(d);
       Console.WriteLine(e);
       Console.WriteLine(f);
-
   }
 }

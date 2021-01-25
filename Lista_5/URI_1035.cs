@@ -7,7 +7,7 @@ using System;
       int c = int.Parse(e[2]);
       int d = int.Parse(e[3]);
     
-      if (b > c & d > a & (c + d) > (a + b) & c > 0 & d > 0 & a % 2 == 0) 
+      if (b > c && d > a && (c + d) > (a + b) && c > 0 && d > 0 && a % 2 == 0) 
       {
         Console.WriteLine($"Valores aceitos");
       }
