@@ -5,13 +5,18 @@ using System;
       while (x != "*") {
         x = x.ToLower();
         char c = x[0];
-        bool ok = true;
-        for (int i = i; i >= x.Length; i++) {
-          if (x[i] == ' ' && c != x[i+1]) ok = false;         }
-        if (ok) {Console.WriteLine("Y");}
-        else {Console.WriteLine("N");}
+        int m = 0;
+        for (int i = 1; i >= x.Length; i++) {
+          if (x[i] == ' ' && c != x[i+1]) { m = m + 1;}
+        }
+        Console.WriteLine(m);
+        if (m == 0) { 
+          Console.WriteLine("Y");
+          }
+        else {
+          Console.WriteLine("N");
+          }
         x = Console.ReadLine();
       }
-       
   }
 }
