@@ -15,5 +15,6 @@ using System;
       }
       double m = s / 2;
       Console.WriteLine($"media = {m:0.00}");
+    
   }
 }
