@@ -7,13 +7,19 @@ using System;
       int c = int.Parse(e[2]);
       int d = int.Parse(e[3]);
       while (a != 0 || b != 0 || c != 0 || d != 0) {
+        if (c < a || c == a && d < b) {
+          int mi = 1440 -((a * 60) + b);
+          int mf = ((c * 60) + d);
+          int t = mf + mi;
+          Console.WriteLine(t);
+        }
+        else {
+          int mi = ((a * 60) + b);
+          int mf = ((c * 60) + d);
+          int t = mf - mi;
+          Console.WriteLine(t);
+        }
         
-        int mi = (a * 3600) + (b*60);
-        int mf = (c * 3600) + (d*60);
-        int t = (mf - mi) / 60;
-
-        Console.WriteLine(t);
-
         e = Console.ReadLine().Split(' ');
         a = int.Parse(e[0]);
         b = int.Parse(e[1]);
