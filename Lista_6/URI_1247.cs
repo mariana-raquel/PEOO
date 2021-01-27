@@ -1,14 +1,23 @@
 using System;
   class MainClass {
     public static void Main (string[] args) {
-
-      string [] e = Console.ReadLine().Split(' ');
-      int d = int.Parse(e[0]);
-      int vf = int.Parse(e[1]);
-      int vg = int.Parse(e[2]);
-      int dg = d * vg;
-      int df = d * vf;
-      if (dg > df) { Console.WriteLine("S"); }
-      if (dg < df) { Console.WriteLine("N"); }
+      string s;
+      while (string.IsNullOrEmpty (s = Console.ReadLine()) == false) {
+      string[] e = s.Split(' ');
+      double d = double.Parse(e[0]);
+      double vf = double.Parse(e[1]);
+      double vg = double.Parse(e[2]);
+      
+      double dg = Math.Sqrt((12*12) + (d*d));
+      double tf = 12 / vf;
+      double tg = dg / vg;
+      if (tg <= tf) { 
+        Console.WriteLine("S"); 
+      }
+      else { 
+        Console.WriteLine("N"); 
+      }
+      
+    }
   }
 }

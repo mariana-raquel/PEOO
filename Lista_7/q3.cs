@@ -1,15 +1,14 @@
 using System;
   class MainClass {
     public static void Intervalo(double x, out int inicio, out int fim) {
-      int i = (int) x;
-      int f = x + 1;
+      inicio = (int) x;
+      fim = inicio + 1;
     }
     public static void Main(string[] args){
-      //double a  = double.Parse(Console.ReadLine());
-      a = 4.5;
-      Intervalo(a, out int i, out int f);
-      Console.WriteLine(i);
-      Console.WriteLine(f);
-      Console.WriteLine($"[{i}, {f}]");
+      double x  = double.Parse(Console.ReadLine());
+      Intervalo(x, out int y, out int z);
+      Console.WriteLine(y);
+      Console.WriteLine(z);
+      Console.WriteLine($"[{y}, {z}]");
     }
   }
