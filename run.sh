@@ -1,0 +1,3 @@
+file=$(ls -Rt */*.cs | head -n1)
+echo Executando $file ...
+mcs -out:../main.exe $file ; mono ../main.exe

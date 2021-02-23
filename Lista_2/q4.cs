@@ -3,17 +3,17 @@ using System;
     public static void Main(string[] args) {
       Conta cn = new Conta();
       Console.WriteLine("Informe seu nome:");
-      cn.tit = Console.ReadLine();
+      cn.SetTitular(Console.ReadLine());
       Console.WriteLine("Informe o número da sua conta:");
-      cn.c = double.Parse(Console.ReadLine());
+      cn.SetConta(double.Parse(Console.ReadLine()));
       Console.WriteLine("Informe o saldo da sua conta:");
-      cn.s = double.Parse(Console.ReadLine());
+      cn.SetSaldo(double.Parse(Console.ReadLine()));
       Console.WriteLine("Informe a transação a ser realizada:");
-      cn.t = Console.ReadLine();
+      cn.SetTransação(Console.ReadLine());
       Console.WriteLine("Informe o valor da transação:");
-      cn.vt = double.Parse(Console.ReadLine());
+      cn.SetValor(double.Parse(Console.ReadLine()));
       
-      Console.WriteLine($"Olá {cn.tit}, conta nº: {cn.c}, foi efetuado uma transação de {cn.t} no valor de R$ {cn.vt:0.00} na sua conta, que agora está com o valor de R$ {cn.conta():0.00}");
+      Console.WriteLine($"Olá {cn.GetTitular()}, conta nº: {cn.GetConta()}, foi efetuado uma transação de {cn.GetTransação()} no valor de R$ {cn.GetValor():0.00} na sua conta, que agora está com o valor de R$ {cn.NovoSaldo():0.00}");
     }
   }
   class Conta {
@@ -34,8 +34,23 @@ using System;
     public void SetSaldo(double a) {
       s = a;
     }
-    
-    public double conta() {
+
+    public string GetTitular() {
+      return tit;
+    }
+    public string GetTransação() {
+      return t;
+    }
+    public double GetConta() {
+      return c;
+    }
+    public double GetValor() {
+      return vt;
+    }
+    public double GetSaldo() {
+      return s;
+    }
+    public double NovoSaldo() {
       double saldo = 0;
       if (t == "Débito" || t == "Debito" || t == "débito" || t == "debito") {
         saldo = s - vt;

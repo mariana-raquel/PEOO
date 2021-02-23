@@ -26,3 +26,4 @@ using System;
     }
   }
   
+  /*run = "mcs -out:main.exe 'Lista_2/q2.cs' ; mono main.exe"*/
