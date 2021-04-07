@@ -4,7 +4,7 @@ using System;
       Pessoa p = new Pessoa();
       Console.WriteLine($"Digite seu nome:");
       p.SetNome(Console.ReadLine());
-      Console.WriteLine($"Digite sua idade no formato mm/dd/aaaa:");
+      Console.WriteLine($"Digite sua idade no formato mm-dd-aaaa:");
       p.SetNascimento(DateTime.Parse(Console.ReadLine()));
       Console.WriteLine($"Olá {p.GetNome()}, você tem (ou irá fazer esse ano) {p.Idade()} anos");
     }

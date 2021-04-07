@@ -26,7 +26,7 @@ using System;
           Console.WriteLine(m);
         }
       }
-
+      Console.WriteLine();
       a.Excluir(a2);
 
       foreach (Compromisso m in a.Listar()) {
@@ -57,16 +57,24 @@ using System;
       }
     }
     public void Excluir(Compromisso c) {
-      c = null;
-      //for (int i = 0; i <= comp.Length; i--) {
-      //  comp[i] = comp[i+1];
-      //}
+      int w = Array.IndexOf(comp, c);
+      if (w != -1) {
+        for (int p = w; p <= k; p++) {
+          comp[p] = comp[p+1];
+          k--;
+        }
+      }
     }
     public Compromisso[] Listar() {
       return comp;
     }
-    //public Compromisso[] Pesquisar(int mes, int ano) {
-      
-    //}
-
-  }
+    /*public Compromisso[] Pesquisar(string cat) {
+      int y = 0;
+      Compromisso[] newComp = new Compromisso[20];
+      foreach (Compromisso p in comp) {
+        if (p != null && comp.Data.Month == mes && comp.Data.Year == ano) {
+          newComp[y++] = p;
+        }
+      }
+      return newComp;*/
+    }

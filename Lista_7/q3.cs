@@ -11,7 +11,7 @@ using System;
       Console.WriteLine("Qual a data de nascimento (mm-dd-aaaa)?");
       p.Nascimento = DateTime.Parse(Console.ReadLine());
       Console.WriteLine(p);
-      Console.WriteLine($"O paciente tem {p.Idade()}");
+      Console.WriteLine($"O paciente tem {p.Idade}");
     }
   }
   class Paciente {
@@ -33,8 +33,10 @@ using System;
       get { return nascimento; }
       set { if (nascimento.Month > 0 && nascimento.Day > 0) nascimento = value; }
     }
-    public string Idade() {
+    public string Idade {
+      get {
       DateTime da = DateTime.Now;
+      
       int i = 0;
       if (da.Month < nascimento.Month && da.Day < nascimento.Day) {
         i = (da.Year - nascimento.Year) - 1;
@@ -54,7 +56,8 @@ using System;
       if (da.Month == nascimento.Month) { m = 0; }
       if (da.Month > nascimento.Month) { m = da.Month - nascimento.Month ;}
 
-      return $"{i} anos e {m} meses";
+      return $"{i} ano(s) e {m} mes(es)";
+      }
     }
     public override string ToString() {
       return $"Nome: {nome} - CPF: {cpf} - Telefone: {telefone} - Nascimento: {nascimento:dd/MM/yyyy}";

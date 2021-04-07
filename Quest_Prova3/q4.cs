@@ -89,12 +89,18 @@ using System;
       Console.WriteLine();
       
       Console.WriteLine($"Resultados da sua busca:");
+      
+      int o = 0;
       foreach (Aplicativo r in l.Pesquisar("Sobrevivência")) {
-        if (r != null) Console.WriteLine($"- {r};"); 
+        if (r != null) {
+          o += 1;
+          Console.WriteLine($"- {r};");
+        } 
       }
-      Console.WriteLine();
+      if (o == 0) Console.WriteLine("Categoria não encontrada"); 
     }
   }
+
   class Aplicativo {
     private int curtidas;
     private string nome, categoria;
