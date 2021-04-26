@@ -12,10 +12,7 @@ using System;
       double cm = d / l;
       double gkm = vl / cm;
 
-        Console.WriteLine($"O consumo médio é de {cm:0.00} Km por litro");
-      Console.WriteLine($"O gasto por Km percorrido é R$ {gkm:0.00}");
-
-
-      
+      Console.WriteLine($"O consumo médio é de {cm:0.00} Km por litro");
+      Console.WriteLine($"O gasto por Km percorrido é R$ {gkm:0.00}"); 
     }
   }

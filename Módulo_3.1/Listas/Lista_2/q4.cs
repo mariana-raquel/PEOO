@@ -1,8 +1,9 @@
 using System;
   class MainClass {
     public static void Main (string[] args) {
-      Console.WriteLine("Digite a base e a altura do retângulo:");
+      Console.WriteLine("Digite a base do retângulo:");
       double b = double.Parse(Console.ReadLine());
+      Console.WriteLine("Digite a altura do retângulo:");
       double h = double.Parse(Console.ReadLine());
 
       double a = b * h;

@@ -8,14 +8,15 @@ using System;
       string[] t = Console.ReadLine().Split(':');
       v.h = int.Parse(t[0]);
       v.m = int.Parse(t[1]);
-      Console.WriteLine($"A velocidade média é de {v.velocidade()} km/h");
+      Console.WriteLine($"A velocidade média é de {v.VelMed():0.00} km/h");
     }
   }
   class Velocidade {
     public double d;
     public int h, m;
-    public double velocidade() {
-      double vm = d / (h + (m/60));
+    public double VelMed() {
+      double temp = h + ((double) m/60);
+      double vm = d / temp;
       return vm;
     }
   }

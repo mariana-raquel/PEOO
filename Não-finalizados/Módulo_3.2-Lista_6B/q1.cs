@@ -5,6 +5,7 @@ using System;
       c.Inserir(1);
       c.Inserir(2);
       c.Inserir(3);
+      c.Inserir(4);
       Console.WriteLine(c.NumItens());
       foreach (Colecao i in c.Listar()) {
         Console.WriteLine(i);

@@ -88,13 +88,19 @@ using System;
       }
       Console.WriteLine();
       
-      Console.WriteLine($"Resultados da sua busca:");
-      foreach (Aplicativo r in l.Pesquisar("Sobrevivência")) {
-        if (r != null) Console.WriteLine($"- {r};"); 
-      }
+      Console.WriteLine($"Qual categoria você deseja procurar?");
+      string pesq = Console.ReadLine();
+
       Console.WriteLine();
+      
+      Console.WriteLine($"Resultados da sua busca:");
+      foreach (Aplicativo r in l.Pesquisar(pesq)) {
+        Console.WriteLine($"- {r.Nome}");
+      } 
+      if (l.Pesquisar(pesq).Length == 0) Console.WriteLine("Categoria não encontrada");
     }
   }
+
   class Aplicativo {
     private int curtidas;
     private string nome, categoria;
@@ -140,8 +146,9 @@ using System;
       }
     }
     public void Inserir(Aplicativo app) {
-      la[k] = app;
-      k++;
+      if (k < 20) {
+        la[k++] = app;
+      }
     }
     public void Excluir(Aplicativo app) {
       int i = Array.IndexOf(la, app);
@@ -155,15 +162,15 @@ using System;
     public Aplicativo[] Listar() {
       return la;
     }
-    
     public Aplicativo[] Pesquisar(string cat) {
       int y = 0;
-      Aplicativo[] newLa = new Aplicativo[20];
+      Aplicativo[] newLa = new Aplicativo[10];
       foreach (Aplicativo p in la) {
         if (p != null && p.Categoria == cat) {
           newLa[y++] = p;
         }
       }
+      Array.Resize(ref newLa, y);
       return newLa;
     }
   }

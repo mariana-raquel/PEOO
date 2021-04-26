@@ -9,7 +9,7 @@ using System;
       int h = int.Parse(thm[0]);
       int m = int.Parse(thm[1]);
       v.SetTempo(h + (m / 60.0));
-      Console.WriteLine($"A velocidade média é de {v.velocidade()} km/h");
+      Console.WriteLine($"A velocidade média é de {v.velocidade():0.00} km/h");
     }
   }
   class Velocidade {

@@ -1,12 +1,16 @@
+/*Corrigida*/
 using System;
   class MainClass {
     public static void Main(string[] args) {
       Playlist p = new Playlist();
-      Musica m1 = new Musica("Deixa Eu te Usar", "Sarah Farias", new TimeSpan(0, 0, 04, 37));
+      TimeSpan d1 = new TimeSpan(0, 0, 04, 37);
+      TimeSpan d2 = new TimeSpan(0, 0, 08, 14);
+      TimeSpan d3 = new TimeSpan(0, 0, 06, 18);
+      Musica m1 = new Musica("Deixa Eu te Usar", "Sarah Farias", d1);
       p.Inserir(m1);
-      Musica m2 = new Musica("Oceanos", "Ana Nóbrega", new TimeSpan(0, 0, 08, 14));
+      Musica m2 = new Musica("Oceanos", "Ana Nóbrega", d2);
       p.Inserir(m2);
-      Musica m3 = new Musica("Maranata", "Banda Avivah", new TimeSpan(0, 0, 06, 18));
+      Musica m3 = new Musica("Maranata", "Banda Avivah", d3);
       p.Inserir(m3);
       Console.WriteLine($"Sua Playlist tem {p.Retorno()}. Dura {p.DuraçãoTotal()}.");
   }
@@ -42,8 +46,10 @@ using System;
     Musica[] m = new Musica[20];
     int c = 0;
     public void Inserir(Musica n) {
-      m[c] = n;
-      c++;
+      if (c < 20) {
+        m[c] = n;
+        c++;
+      }
     }
     public string Retorno() {
       string x = "";

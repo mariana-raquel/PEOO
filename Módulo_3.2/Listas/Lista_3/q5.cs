@@ -1,11 +1,10 @@
 using System; 
   class MainClass {
     public static void Main(string[] args) {
-      Data d = new Data(29, 03, 2021);
+      Data d = new Data(20, 04, 2021);
       Console.WriteLine(d);
-      Data a = new Data("29/03/2021");
+      Data a = new Data("20/04/2021");
       Console.WriteLine(a);
-      
     }
   }
   class Data {
@@ -31,9 +30,26 @@ using System;
     }
     public Data (string data) {
       string[] dt = data.Split("/");
-      this.dia = int.Parse(dt[0]);
-      this.mes = int.Parse(dt[1]);
-      this.ano = int.Parse(dt[2]);
+      int a = int.Parse(dt[0]);
+      int b = int.Parse(dt[1]);
+      int c = int.Parse(dt[2]);
+      if (
+        b == 1 && a > 0 && a < 31 ||
+        b == 2 && a > 0 && a < 28 ||
+        b == 3 && a > 0 && a < 31 ||
+        b == 4 && a > 0 && a < 30 ||
+        b == 5 && a > 0 && a < 31 ||
+        b == 6 && a > 0 && a < 30 ||
+        b == 7 && a > 0 && a < 31 ||
+        b == 8 && a > 0 && a < 31 ||
+        b == 9 && a > 0 && a < 30 ||
+        b == 10 && a > 0 && a < 31 ||
+        b == 11 && a > 0 && a < 30 ||
+        b == 12 && a > 0 && a < 31)  {
+        dia = a;
+        mes = b;
+        ano = c;
+      }
     }
     public void SetData (int dia, int mes, int ano) {
       if (
@@ -65,6 +81,6 @@ using System;
     }
     public override string ToString() {
       if (dia == 0 || mes == 0) return $"Data Inválida";
-      return $"{dia}/{mes:00}/{ano}";
+      return $"{dia:00}/{mes:00}/{ano}";
     }
   }

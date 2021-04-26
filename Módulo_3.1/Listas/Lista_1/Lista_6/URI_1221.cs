@@ -4,7 +4,7 @@ using System;
       int e = int.Parse(Console.ReadLine());
       int c = 1;
       int s = 0;
-      while (c <= e){
+      while (c <= e) {
         int a = int.Parse(Console.ReadLine());
         int i = 2;
         double r = Math.Sqrt(a);

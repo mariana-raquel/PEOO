@@ -2,12 +2,15 @@ using System;
   class MainClass {
     public static void Main (string[] args) {
       Estagiario e = new Estagiario("Mariana", "012.345.678-90", "91234-5678");
+      e.SetDias(1);
+      e.SetDias(2);
+      e.SetTurno(3);
       Console.WriteLine(e);
 
     }
   }
   [Flags]
-  enum Dias {
+  enum Dias : int {
     nenhum = 0, segunda = 1, terça = 2, quarta = 4, quinta = 8, sexta = 16
   }
   enum Turno {
